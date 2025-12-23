@@ -29,7 +29,21 @@ const FuukeiContent = () => (
     >
       <p>We are working on a new project with <strong>Fuukei</strong>.</p>
       <p>Stay tuned for updates!</p>
+      
     </motion.div>
+    <motion.h2 initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.8, duration: 0.5 }}
+        style={{ 
+          marginTop: '2.5rem', 
+          marginBottom: '2rem', 
+          color: '#2c3e50',
+          fontSize: '1.5rem',
+          letterSpacing: '1px',
+          paddingBottom: '10px'
+        }}>
+      Seeing in Q2 2026!
+    </motion.h2>
     <motion.button
       className="cta-button"
       onClick={() => window.open('https://github.com/Fuukei', '_blank')}

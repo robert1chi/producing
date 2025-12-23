@@ -32,6 +32,7 @@
   height: 100vh;
   overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  transform: translateZ(0);
 }
 
 .animated-bg {
