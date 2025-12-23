@@ -1,0 +1,110 @@
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --text-main: #1d1d1f;
+  --text-desc: #424245;
+  --btn-bg: #0071e3;
+  --accent: #0071e3;
+  --bg-gradient: linear-gradient(-45deg, #f5f7fa, #c3cfe2, #e6dee9, #a1c4fd);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --glass-bg: rgba(0, 0, 0, 0.6);
+    --text-main: #ffffff;
+    --text-desc: #a1a1a6;
+    --btn-bg: #8e44ad;
+    --accent: #a29bfe;
+    --bg-gradient: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #000000);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+}
+
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: var(--bg-gradient);
+  background-size: 400% 400%;
+  animation: flow 18s ease infinite;
+  transition: background 1s ease;
+}
+
+.glass-card {
+  padding: 4.5rem 3.5rem;
+  width: 90%;
+  max-width: 540px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 48px;
+  text-align: center;
+  color: var(--text-main);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+h1 {
+  font-size: 3.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-desc);
+  margin-bottom: 2.8rem;
+}
+
+.description strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 44px;
+  background: var(--btn-bg);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  transform: scale(1.03) translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
